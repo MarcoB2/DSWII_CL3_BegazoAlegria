@@ -1,0 +1,14 @@
+<div>
+    <h2>Calculadora de Precio</h2>
+    <div>
+      <label for="precio">Precio por artículo:</label>
+      <input type="number" id="precio" [(ngModel)]="precioPorArticulo" (change)="calcularPrecioTotal()">
+    </div>
+    <div>
+      <label for="cantidad">Cantidad adquirida:</label>
+      <input type="number" id="cantidad" [(ngModel)]="cantidad" (change)="calcularPrecioTotal()">
+    </div>
+    <div *ngIf="precioTotal !== undefined">
+      <p>El cliente debe pagar: {{ precioTotal | currency }}</p>
+    </div>
+  </div>  
